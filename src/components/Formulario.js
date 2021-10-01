@@ -1,12 +1,6 @@
 import React from "react";
 import { useState, useEffect, useRef } from "react";
-import {
-  collection,
-  addDoc,
-  doc,
-  setDoc,
-  serverTimestamp,
-} from "firebase/firestore";
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { db } from "../firebase.js";
 
 function Formulario() {

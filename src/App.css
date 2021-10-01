@@ -6,7 +6,7 @@
   justify-content: center;
 }
 .input {
-  width: 200px;
+  width: 80%;
   height: 100px;
 }
 /* BOTONES */
@@ -14,13 +14,15 @@
 .botones {
   display: flex;
   margin-top: 30px;
+  flex-direction: column;
 }
 
 .botones-apps {
-  width: 50%;
+  width: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
+  justify-content: center;
 }
 
 .btn-rappi {
@@ -44,22 +46,26 @@
   width: 100px;
   height: 130px;
   margin: 7px;
+  background: yellow;
 }
 .btn-lista {
   width: 100px;
   height: 130px;
   margin: 7px;
+  background: yellowgreen;
 }
 .boton-agregar {
   width: 50%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
+  background: honeydew;
 }
 
 /*VISTA */
 .agregadas {
   font-size: 20px;
+  background: honeydew;
 }
 .en-proceso {
   background: yellow;
