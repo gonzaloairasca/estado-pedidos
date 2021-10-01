@@ -40,7 +40,12 @@
   height: 130px;
   margin: 7px;
 }
-.btn-borrar {
+.btn-en-proceso {
+  width: 100px;
+  height: 130px;
+  margin: 7px;
+}
+.btn-lista {
   width: 100px;
   height: 130px;
   margin: 7px;

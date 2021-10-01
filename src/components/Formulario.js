@@ -24,8 +24,23 @@ function Formulario() {
     e.preventDefault();
     setInput("PEDIDOS YA = ");
   };
-  const borrar = (e) => {
+  const enProceso = async (e) => {
     e.preventDefault();
+    const docRef = await addDoc(collection(db, "ordenes-en-proceso"), {
+      info: input,
+      timestamps: serverTimestamp(),
+    });
+    console.log("Document written with ID: ", docRef.id);
+    setInput("");
+  };
+
+  const listas = async (e) => {
+    e.preventDefault();
+    const docRef = await addDoc(collection(db, "ordenes-listas"), {
+      info: input,
+      timestamps: serverTimestamp(),
+    });
+    console.log("Document written with ID: ", docRef.id);
     setInput("");
   };
 
@@ -61,8 +76,13 @@ function Formulario() {
               </button>
             </div>
             <div>
-              <button onClick={borrar} className="btn-borrar">
-                Borrar
+              <button onClick={enProceso} className="btn-en-proceso">
+                EN PROCESO
+              </button>
+            </div>
+            <div>
+              <button onClick={listas} className="btn-lista">
+                LISTA
               </button>
             </div>
           </div>
