@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import {
   collection,
   addDoc,
@@ -11,6 +11,12 @@ import { db } from "../firebase.js";
 
 function Formulario() {
   const [input, setInput] = useState("");
+
+  const inputRef = useRef(null);
+
+  useEffect(() => {
+    inputRef.current.focus();
+  });
 
   const actualizarInput = (e) => {
     setInput(e.target.value);
@@ -58,7 +64,12 @@ function Formulario() {
     <div className="formulario">
       <form>
         <div className="contenedor-input">
-          <input className="input" value={input} onChange={actualizarInput} />
+          <input
+            className="input"
+            value={input}
+            onChange={actualizarInput}
+            ref={inputRef}
+          />
         </div>
         <div className="botones">
           <div className="botones-apps">
