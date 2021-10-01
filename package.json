@@ -2,7 +2,7 @@
   "name": "estado-pedidos",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://gonzaloairasca.github.io/estado-pedidos",
+  "homepage": "https://gonzaloairasca.github.io/estado-pedidos/index.html",
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
