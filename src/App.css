@@ -1,3 +1,7 @@
+.container {
+  display: flex;
+}
+
 .formulario {
   width: 100%;
 }
@@ -66,6 +70,8 @@
 .agregadas {
   font-size: 20px;
   background: honeydew;
+  display: flex;
+  flex-direction: column;
 }
 .en-proceso {
   background: yellow;
@@ -75,4 +81,19 @@
 .ordenes-listas {
   background: yellowgreen;
   font-size: 20px;
+}
+
+.container-aceptadas {
+  width: 30%;
+  height: 800px;
+}
+
+.container-en-proceso {
+  width: 30%;
+  height: 400px;
+}
+
+.container-listas {
+  width: 30%;
+  height: 400px;
 }

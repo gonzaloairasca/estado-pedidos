@@ -22,7 +22,7 @@ function VistaEstado() {
   const traerDatos = async () => {
     const collectionRef = collection(db, "ordenes");
 
-    const q = query(collectionRef, orderBy("timestamps"), limit(15));
+    const q = query(collectionRef, orderBy("timestamps", "desc"), limit(15));
 
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
       const docs = [];
@@ -36,7 +36,7 @@ function VistaEstado() {
   const traerOrdenesEnProceso = async () => {
     const collectionRef = collection(db, "ordenes-en-proceso");
 
-    const q = query(collectionRef, orderBy("timestamps"), limit(15));
+    const q = query(collectionRef, orderBy("timestamps", "desc"), limit(15));
 
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
       const docs = [];
@@ -50,7 +50,7 @@ function VistaEstado() {
   const traerOrdenesListas = async () => {
     const collectionRef = collection(db, "ordenes-listas");
 
-    const q = query(collectionRef, orderBy("timestamps"), limit(15));
+    const q = query(collectionRef, orderBy("timestamps", "desc"), limit(15));
 
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
       const docs = [];
@@ -67,10 +67,16 @@ function VistaEstado() {
     traerOrdenesListas();
   }, []);
   return (
-    <div>
-      <Aceptadas ordenesAceptadas={ordenes} />
-      <EnProceso ordenesEnProceso={ordenesEnProceso} />
-      <Listas ordenesListas={ordenesListas} />
+    <div className="container">
+      <div className="container-aceptadas">
+        <Aceptadas ordenesAceptadas={ordenes} />
+      </div>
+      <div className="container-en-proceso">
+        <EnProceso ordenesEnProceso={ordenesEnProceso} />
+      </div>
+      <div className="container-listas">
+        <Listas ordenesListas={ordenesListas} />
+      </div>
     </div>
   );
 }
